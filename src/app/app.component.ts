@@ -1,3 +1,5 @@
+import { Episode } from './episode/episode.component';
+import { Podcast } from './podcast/podcast.component';
 import { Component } from '@angular/core';
 
 @Component({
