@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "PodBean": {
+    "PodPod": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -127,5 +127,5 @@
       }
     }
   },
-  "defaultProject": "PodBean"
+  "defaultProject": "PodPod"
 }
