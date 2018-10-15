@@ -1,4 +1,4 @@
-import { Episode } from './../episode/episode.component';
+import { EpisodeComponent } from './../episode/episode.component';
 import { PodApiService } from './../pod-api.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -14,16 +14,16 @@ export class PodcastComponent implements OnInit {
 
   ngOnInit() {
   }
-  podcast = "Gone";
+  
 }
 export class Podcast {
-  id: Number;
   title: String;
   description: String;
   language: String;
   numberOfEpisodes: Number;
   category: String;
   isFavorite: Boolean;
-  episodes: Array<Episode>;
+  episodes: Array<EpisodeComponent>;
   siteUrl: string;
+  
 }
