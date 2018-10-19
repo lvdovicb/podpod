@@ -1,3 +1,4 @@
+import { SearchService } from './search.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -8,9 +9,10 @@ import { PodcastComponent } from './podcast/podcast.component';
 import { EpisodeComponent } from './episode/episode.component';
 import { EpisodeListComponent } from './episode-list/episode-list.component';
 import { SearchComponent } from './search/search.component';
-import { MenuComponent } from './menu/menu.component';
 import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -19,15 +21,16 @@ import { FooterComponent } from './footer/footer.component';
     EpisodeComponent,
     EpisodeListComponent,
     SearchComponent,
-    MenuComponent,
     NavComponent,
-    FooterComponent
+    FooterComponent,
+    SignInComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [SearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -6,17 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./episode.component.sass']
 })
 export class EpisodeComponent implements OnInit {
-  
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}
-export class Episode {
   id: number;
   name: string;
   description: string;
   releaseDate: Date;
   duration: Number;
+  constructor() { }
+
+  ngOnInit() {
+  }
 }

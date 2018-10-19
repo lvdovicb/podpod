@@ -1,4 +1,4 @@
-import { Episode } from './../episode/episode.component';
+import { EpisodeComponent } from './../episode/episode.component';
 import { Component, OnInit } from '@angular/core';
 
 
@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./episode-list.component.sass']
 })
 export class EpisodeListComponent implements OnInit {
+  episodes =  [Episode];
 
   constructor() { }
 
