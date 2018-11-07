@@ -1,7 +1,9 @@
+import { RouterModule, Routes } from '@angular/router';
 import { SearchService } from './search.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing/app-routing.module';
 
 
 import { AppComponent } from './app.component';
@@ -13,6 +15,7 @@ import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { PlayerComponent } from './player/player.component';
 
 @NgModule({
   declarations: [
@@ -24,11 +27,13 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     NavComponent,
     FooterComponent,
     SignInComponent,
-    SignUpComponent
+    SignUpComponent,
+    PlayerComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule
   ],
   providers: [SearchService],
   bootstrap: [AppComponent]

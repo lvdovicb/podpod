@@ -1,19 +1,33 @@
+import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { map, tap, switchMap } from 'rxjs/operators';
 import {Subject} from 'rxjs';
 
-@Injectable() 
+
+@Injectable({
+  providedIn: 'root'
+}) 
+
 export class SearchService {
-  apiRoot:string = 'https://listennotes.p.mashape.com/api/v1/search'
   results:Object[];
   loading:boolean;
-
-  constructor(private http:HttpClient) { 
-    this.results = [];
-    this.loading = false;
+  query: string;
+  
+  constructor(private http: HttpClient) {
+    
   }
-
-  searchPodcast(term:string) {
-  }
+  
+  getPods(query) { 
+   let headers: HttpHeaders = new HttpHeaders({
+    "X-Mashape-Key": "cviLi6JurYmshmkatN7db3K4XZLAp191szBjsnzEEwrYY5NqUE",
+    "Accept" : "application/json"
+   })  
+      
+    // const apiUrl = "https://listennotes.p.mashape.com/api/v1/search?q=";
+    return this.http.get("https://listennotes.p.mashape.com/api/v1/search?q=", {headers});
+  };
 }
+
+
 

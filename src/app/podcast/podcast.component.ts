@@ -1,5 +1,4 @@
 import { EpisodeComponent } from './../episode/episode.component';
-import { PodApiService } from './../pod-api.service';
 import { Component, OnInit } from '@angular/core';
 
 

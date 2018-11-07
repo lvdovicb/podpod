@@ -1,8 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face
+  font-family: "Bauhaus 93"
+  src: url("src/assets/fonts/bauhaus-93/BAUHS93.ttf") format("truetype")
 
 @font-face
-  font-family: "Lato"
-  src: local("/src/assets/fonts/lato/Lato-Medium") format("ttf"), local("/src/assets/fonts/lato/Lato-Bold.ttf") format("tff")
+  font-family: "Brandon Grotesque Light"
+  src: url("src/assets/fonts/brandon-grotesque/brandon-grotesque-light-58a8a4b38001d.woff") format('woff')
+
+@font-face
+  font-family: "Brandon Grotesque Black"
+  src: url("src/assets/fonts/brandon-grotesque/brandon-grotesque-black-58a8a3e824392.woff") format('woff')
 
 html,
 body,
@@ -11,10 +18,10 @@ body,
   width: 100%
   height: 100%
   box-sizing: border-box
-  font-family: Lato, sans-serif
+  font-family: "Bauhaus 93", sans-serif
 
 $main: #2b244d
-$pearl: #f3e2c8
+$beige: #D1B971
 
 
 section 
@@ -23,7 +30,7 @@ section
   display: grid
   grid-template-columns: 1fr repeat(12, 1fr) 
   grid-template-rows: repeat(12, 50px) 
-  background-color: $pearl
+  background-color: #D1B971
 
 header
   grid-column: 3 / 13
@@ -32,10 +39,10 @@ header
   justify-content: center
   align-items: center
   color: #000
-  background-color: #fff
+  background-color: #C53C21
   font-size: 2rem
-  font-family: Lato
-  font-weight: 700
+  font-family: "Bauhaus 93", sans-serif
+  font-weight: 500
   border-bottom: 7px black solid
   letter-spacing: 2px
     
@@ -51,17 +58,20 @@ header
   color: #fff
   background-color: black
   border: none
-  font-weight: 700
+  font-family: "Brandon Grotesque Black"
+  font-weight: 400
+  letter-spacing: 2px
   text-transform: uppercase 
   padding: 0
   cursor: pointer
+  transition: background-color .5s ease
 
 #user_buttons button:hover
-  background-color: white
+  background-color: yellow
   color: black
 
 #user_buttons > button:nth-child(1)
-  border-bottom: 6px solid white
+  border-bottom: 6px solid #C53C21
 
 #user_buttons > button:nth-child(1):hover
   border-bottom: 6px solid black
@@ -81,6 +91,7 @@ header
   border: 7px solid black
   border-top: none
   height: 2rem
+  font-family: "Brandon Grotesque Light"
   
 #nav
   grid-column: 1 / span 2

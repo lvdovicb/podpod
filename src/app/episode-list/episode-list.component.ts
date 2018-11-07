@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./episode-list.component.sass']
 })
 export class EpisodeListComponent implements OnInit {
-  episodes =  [Episode];
+  episodes =  [];
 
   constructor() { }
 
