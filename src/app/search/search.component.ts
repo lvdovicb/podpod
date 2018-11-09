@@ -1,9 +1,12 @@
 
-import { Component, OnInit, Injectable, Input } from '@angular/core';
+import { Component, OnInit, Injectable, Input, EventEmitter } from '@angular/core';
 import { SearchService } from '../search.service';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {Subject} from 'rxjs';
+import { ResultsStoreService } from './../results-store.service';
+import { EventService } from '../event.service';
+
 
 
 @Component({
@@ -15,10 +18,19 @@ import {Subject} from 'rxjs';
 // @Input :
 
 export class SearchComponent implements OnInit {
+  pods: Object;
 
-  constructor(private search: SearchService) { }
+  constructor(private search: SearchService, private resultsstore: ResultsStoreService, private eventservice: EventService) { }
 
   ngOnInit() {
   }
-
+  getPods(query){
+     this.search.getPods(query).subscribe(search => 
+    {this.pods = search
+      // console.log(this.pods["results"]);
+    this.resultsstore.results = this.pods["results"];
+    
+    })
+    this.eventservice.event.emit();
+  }
 }

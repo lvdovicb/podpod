@@ -1,5 +1,8 @@
 import { EpisodeComponent } from './../episode/episode.component';
 import { Component, OnInit } from '@angular/core';
+import { ResultsStoreService } from '../results-store.service';
+import { EventService } from '../event.service';
+
 
 
 @Component({
@@ -10,9 +13,16 @@ import { Component, OnInit } from '@angular/core';
 export class EpisodeListComponent implements OnInit {
   episodes =  [];
 
-  constructor() { }
+  constructor(private resultsstore: ResultsStoreService, private eventservice: EventService) { }
 
   ngOnInit() {
+    this.eventservice.event.subscribe(value => {
+      this.episodes = this.resultsstore.results
+      console.log(this.episodes);    
+    }) 
   }
-
+  list() {
+    this.episodes = this.resultsstore.results
+    // console.log(this.episodes);
+  }
 }

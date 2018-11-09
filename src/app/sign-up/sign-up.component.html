@@ -1,3 +1,6 @@
-<p>
-  sign-up works!
-</p>
+<form #formSignIn="ngForm" (ngSubmit)="signUp(formSignIn)">
+    <input type="text" name="name" id="name" ngModel>
+    <input type="email" name="email" ngModel>
+    <input type="password" ngModel name="password" id="password">
+    <input type="submit">
+</form>

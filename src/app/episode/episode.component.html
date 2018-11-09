@@ -1,14 +1,13 @@
 
 <section>
-  <!--<ul *ngIf="search">-->
-    <li *ngFor="let pod of pods">
-
+ <ul >
+    <li>
+      <img src="{{ result.thumbnail }}"/>
+      <h4>  {{ result.title_original }} </h4>
+      <p>  {{ result.podcast_title_original }}</p>
+      <p>  {{ result.audio_length }} </p>
+      <button type="button" (click)="makeFavs(result)">Like Me</button>
     </li>
 
-  <!--</ul>-->
-  <!--<img [src]="thumbail.url">-->
-  <h1>  name </h1>
-  <p>  description </p>
-  <p>  duration </p>
-  <p>  releaseDate </p>
+  </ul>  
 </section>
