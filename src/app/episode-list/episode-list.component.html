@@ -1,9 +1,5 @@
 <section>
-  <app-episode-list *ngFor="let episode of episodes">
-  </app-episode-list>
- 
-  <app-episode></app-episode>
-  <app-episode></app-episode>
-  <app-episode></app-episode>
-  <app-episode></app-episode>
+    <app-episode *ngFor="let episode of episodes" [result]="episode"></app-episode>
+    <app-sign-in></app-sign-in>
+    <app-sign-up></app-sign-up>
 </section>

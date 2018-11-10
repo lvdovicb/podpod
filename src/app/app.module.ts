@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing/app-routing.module';
+import { Form, FormsModule} from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
@@ -33,7 +34,8 @@ import { PlayerComponent } from './player/player.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule
+    RouterModule, 
+    FormsModule
   ],
   providers: [SearchService],
   bootstrap: [AppComponent]

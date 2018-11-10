@@ -12,16 +12,26 @@ import { BehaviorSubject } from 'rxjs';
 
 export class SearchService {
 
-  url: string = 'https://listennotes.p.mashape.com/api/v1/search?q={query}';
-
-    constructor(private http: HttpClient) { }
-
-  getPods(query) {
-    const headers: HttpHeaders = new HttpHeaders()
-        .set('Accept', 'application/json')
-        .set('X-Mashape-Key', 'cviLi6JurYmshmkatN7db3K4XZLAp191szBjsnzEEwrYY5NqUE');
-    return this.http.get(this.url, {headers: headers});
+  results:Object[];
+  loading:boolean;
+  query: string;
+  
+  constructor(private http: HttpClient) {
+    
   }
+  
+  getPods(query) { 
+   let headers: HttpHeaders = new HttpHeaders({
+    "X-Mashape-Key": "cviLi6JurYmshmkatN7db3K4XZLAp191szBjsnzEEwrYY5NqUE",
+    "Accept" : "application/json"
+    // "Access-Control-Allow-Origin": "http://localhost:4200",
+    // "Access-Control-Allow-Headers": "*"
+
+   })  
+      
+    // const apiUrl = "https://listennotes.p.mashape.com/api/v1/search?q=";
+    return this.http.get(`https://listennotes.p.mashape.com/api/v1/search?q=${query}`, {headers});
+  };
 }
 
 

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormsModule, Form } from '@angular/forms';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -6,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sign-up.component.sass']
 })
 export class SignUpComponent implements OnInit {
-
-  constructor() { }
+  
+  constructor(private api: ApiService) { }
 
   ngOnInit() {
   }
+  signUp(form){
+    this.api.newListener(form.value).subscribe(bibi =>
+      {
+        console.log(bibi);
+      
+      }
 
+    )
+
+  }
 }

@@ -1,5 +1,5 @@
 <form>
-  <input type="search" name="search" placeholder="Search" id="search" (click)="getPods(query)">
+  <input type="search"  placeholder="Search" name="search" id="search" (keyup)="getPods($event.target.value)">
   <button type="submit">
     <img src="../../assets/images/search.png" alt="Search">
   </button>
