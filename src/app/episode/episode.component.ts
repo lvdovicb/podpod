@@ -1,6 +1,6 @@
 import { SearchService } from './../search.service';
 import { Component, OnInit } from '@angular/core';
-import { Observable } from "rxjs";
+import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 
 
@@ -14,19 +14,23 @@ export class EpisodeComponent implements OnInit {
 
   pods: Object;
 
-  id: number;
+  podcast_title_original: string;
+  audio: string;
+  audio_length: string;
   name: string;
   thumbnail: string;
-  description: string;
+  description_original: string;
   releaseDate: Date;
-  duration: Number;
+  genres: [];
 
-  constructor(private search:SearchService) { }
+  constructor(private search: SearchService) { }
 
-  ngOnInit() {
-    this.search.getPods(query).subscribe(search => 
-      {this.pods = search
-      console.log(this.search);
-      })
+  ngOnInit() { }
+
+  getPods(query) {
+    this.search.getPods(query).subscribe(search => {
+      this.pods = search;
+      console.log(this.pods);
+    });
   }
 }
