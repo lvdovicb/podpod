@@ -27,7 +27,6 @@ export class SearchComponent implements OnInit {
   getPods(query){
      this.search.getPods(query).subscribe(search => 
     {this.pods = search
-      // console.log(this.pods["results"]);
     this.resultsstore.results = this.pods["results"];
     
     })

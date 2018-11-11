@@ -1,3 +1,4 @@
+import { PlayerComponent } from './../player/player.component';
 import { EpisodeListComponent } from './../episode-list/episode-list.component';
 import { EpisodeComponent } from './../episode/episode.component';
 import { NgModule } from '@angular/core';
@@ -15,13 +16,6 @@ const appRoutes: Routes = [
   { path: 'sign-up', component: SignUpComponent }
 
 ];
-
-  //{ path: 'path/:routeParam', component: MyComponent },
-  //{ path: 'staticPath', component: ... },
-  //{ path: '**', component: ... },
-  //{ path: 'oldPath', redirectTo: '/staticPath' },
-  //{ path: ..., component: ..., data: { message: 'Custom' }
-
 
 @NgModule({
   imports: [RouterModule.forRoot(appRoutes)],

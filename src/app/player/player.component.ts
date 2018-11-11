@@ -12,9 +12,9 @@ import {Howl, Howler} from 'howler';
   styleUrls: ['./player.component.sass']
 })
 export class PlayerComponent implements OnInit {
+
+  constructor() { }
   
-  constructor(public play: PlayerService, private store: ResultsStoreService) { }
-  
-    ngOnInit() {
+  ngOnInit() {
     }
   }

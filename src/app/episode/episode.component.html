@@ -3,11 +3,17 @@
  <ul >
     <li>
       <img src="{{ result.thumbnail }}"/>
-      <h4>  {{ result.title_original }} </h4>
-      <p>  {{ result.podcast_title_original }}</p>
-      <p>  {{ result.audio_length }} </p>
+      <h4> {{ result.title_original }} </h4>
+      <p class="episode_title"> {{ result.podcast_title_original }} </p>
+      <p> {{ result.audio_length }} </p>
+      <div id="epi_player">
+        <audio controls="controls" src="{{ result.audio }}"></audio>
+        <!-- <button (click)="play()">Play</button>
+        <button>Pause</button>
+        <button>Stop</button> -->
+      </div>
       <button type="button" (click)="makeFavs(result)">Like Me</button>
-      <button type="button" (click)="play()">Play</button>
+      <!-- <button type="button" (click)="play()" *ngIf="!show">Play</button> -->
     </li>
 
   </ul>  

@@ -20,6 +20,6 @@ export class AppComponent {
   constructor (private search: SearchService) {}
  
   toggle() {
-    this.show = !this.show;
+    (this.show ? !this.show : this.show)
   }
 }

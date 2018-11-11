@@ -45,4 +45,5 @@ export class EpisodeComponent implements OnInit {
         console.log(value);
       })
   }
+  
 }
