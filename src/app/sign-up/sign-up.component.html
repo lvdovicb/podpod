@@ -1,6 +1,8 @@
-<form #formSignIn="ngForm" (ngSubmit)="signUp(formSignIn)">
-    <input type="text" name="name" id="name" ngModel>
-    <input type="email" name="email" ngModel>
-    <input type="password" ngModel name="password" id="password">
-    <input type="submit">
-</form>
+<fieldset *ngIf="!show">
+    <form id="sign_up" #formSignIn="ngForm" (ngSubmit)="signUp(formSignIn)">
+        <input placeholder="Name" type="text" name="name" id="name" ngModel>
+        <input placeholder="Email" type="email" name="email" ngModel>
+        <input placeholder="Password" type="password" ngModel name="password" id="psswrd">
+        <button type="submit">Sign Up</button>
+    </form>
+</fieldset>

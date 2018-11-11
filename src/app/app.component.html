@@ -1,18 +1,16 @@
-<!--The content below is only a placeholder and can be replaced.-->
 
 <section>
-   
-  <header>  
-      {{ title }}
+  <header [routerLink]="['']" routerLinkActive="router-link-active" >  
+     <p> {{ title }} </p>
   </header>
   <div id="user_buttons">
-    <button type="submit">Sign Up</button>
-    <button type="submit">Sign In</button>
+    <button (click)="toggle()" type="submit" routerLink="/sign-up" routerLinkActive="router-link-active">Sign Up</button>
+    <button (click)="toggle()" type="submit" routerLink="/sign-in" routerLinkActive="router-link-active">Sign In</button>
   </div>
   <app-search id="search"></app-search>
   <app-nav id="nav"></app-nav>
   <main>
     <app-podcast></app-podcast>
   </main>
-
+  <router-outlet></router-outlet>
 </section>

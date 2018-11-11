@@ -1,11 +1,11 @@
+import { PlayerService } from './../player.service';
+import { PlayerComponent } from './../player/player.component';
 import { SearchService } from './../search.service';
 import { ResultsStoreService } from './../results-store.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { Observable } from "rxjs";
 import { Injectable } from '@angular/core';
 import { ApiService } from '../api.service';
-
-
 
 @Component({
   selector: 'app-episode',
@@ -35,16 +35,14 @@ export class EpisodeComponent implements OnInit {
   }
   makeFavs(favorite){
     let listener = JSON.parse(localStorage.getItem("listener"))
-    let fav =  {
+    let fav = {
         id_episode: favorite.id,
         podcast_title_original: favorite.podcast_title_original,
         listenerId: listener.userId
-      }
-    
+      } 
     this.favorite.makeFavs(listener["userId"], listener["id"], fav).subscribe(value =>
       {
         console.log(value);
-        
       })
   }
 }

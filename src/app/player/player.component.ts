@@ -1,5 +1,10 @@
+import { ResultsStoreService } from './../results-store.service';
+import { PlayerService } from './../player.service';
+import { SearchService } from './../search.service';
 import { Component, OnInit } from '@angular/core';
 import {Howl, Howler} from 'howler';
+
+
 
 @Component({
   selector: 'app-player',
@@ -8,14 +13,8 @@ import {Howl, Howler} from 'howler';
 })
 export class PlayerComponent implements OnInit {
   
-  constructor() { }
-
-  ngOnInit() {
+  constructor(public play: PlayerService, private store: ResultsStoreService) { }
+  
+    ngOnInit() {
+    }
   }
-
-}
-let sound = new Howl({
-  src: ['sound.mp3']
-});
-
-sound.play();

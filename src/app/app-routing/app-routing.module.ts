@@ -3,11 +3,17 @@ import { EpisodeComponent } from './../episode/episode.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
+import { SignInComponent } from '../sign-in/sign-in.component';
+import { SignUpComponent } from '../sign-up/sign-up.component';
 
 
-const routes: Routes = [
+const appRoutes: Routes = [
+  { path: '',   redirectTo: 'appComponent', pathMatch: 'full' },
   { path: 'episode', component: EpisodeComponent },
-  { path: 'episodeList', component: EpisodeListComponent }
+  { path: 'episodeList', component: EpisodeListComponent },
+  { path: 'sign-in', component: SignInComponent },
+  { path: 'sign-up', component: SignUpComponent }
+
 ];
 
   //{ path: 'path/:routeParam', component: MyComponent },
@@ -18,16 +24,8 @@ const routes: Routes = [
 
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(appRoutes)],
   exports: [RouterModule]
 })
-// export class FeatureRoutingModule {}
 
-
-// @NgModule({
-//   declarations: [],
-//   imports: [
-//     CommonModule
-//   ]
-// })
 export class AppRoutingModule { }

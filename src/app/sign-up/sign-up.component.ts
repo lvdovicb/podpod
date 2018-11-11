@@ -17,10 +17,7 @@ export class SignUpComponent implements OnInit {
     this.api.newListener(form.value).subscribe(bibi =>
       {
         console.log(bibi);
-      
       }
-
     )
-
   }
 }

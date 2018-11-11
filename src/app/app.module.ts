@@ -34,8 +34,8 @@ import { PlayerComponent } from './player/player.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule, 
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [SearchService],
   bootstrap: [AppComponent]
