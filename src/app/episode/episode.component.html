@@ -1,17 +1,11 @@
 
 <section>
-
-      <img src="{{ result.thumbnail }}"/>
-      <h4> {{ result.title_original }} </h4>
-      <a [routerLink]="['/podcast']" routerLinkActive="router-link-active"  href="result.podcast_title_original" class="podcast_title"> {{ result.podcast_title_original }} </a>
-      <p class="duration">  {{ result.audio_length }} </p>
-      <div id="player">
-        <audio controls="controls" src="{{ result.audio }}"></audio>
-        <!-- <button (click)="play()">Play</button>
-        <button>Pause</button>
-        <button>Stop</button> -->
-      </div>
-      <button type="button" (click)="makeFavs(result)">Like Me</button>
-      <!-- <button type="button" (click)="play()" *ngIf="!show">Play</button> -->
-
+  <img src="{{ result.thumbnail }}"/>
+  <h4> {{ result.title_original }} </h4>
+  <a [routerLink]="['/podcast']" routerLinkActive="router-link-active"  href="result.podcast_title_original" class="podcast_title"> {{ result.podcast_title_original }} </a>
+  <p class="duration">  {{ result.audio_length }} </p>
+  <div id="player">
+    <audio controls="controls" src="{{ result.audio }}"></audio>
+  </div>
+  <button type="button" (click)="makeFavs(result)">Like Me</button>
 </section>

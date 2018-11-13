@@ -1,4 +1,4 @@
-<fieldset *ngIf="!show">
+<fieldset>
   <form id="sign_in" #formSignIn="ngForm" (ngSubmit)="signIn(formSignIn)">
     <input placeholder="Email" type="email" name="email" ngModel>
     <input placeholder="Password" type="password" ngModel name="password" id="password">
