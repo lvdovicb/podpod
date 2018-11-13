@@ -1,5 +1,8 @@
+import { SearchService } from './../search.service';
+import { ApiService } from './../api.service';
+import { ResultsStoreService } from './../results-store.service';
 import { EpisodeComponent } from './../episode/episode.component';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 
 @Component({
@@ -8,14 +11,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./podcast.component.sass']
 })
 export class PodcastComponent implements OnInit {
+ @Input() result; 
+    results = [];
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-  
-}
-export class Podcast {
   title: String;
   description: String;
   language: String;
@@ -24,5 +22,11 @@ export class Podcast {
   isFavorite: Boolean;
   episodes: Array<EpisodeComponent>;
   siteUrl: string;
+
+  constructor(private search:SearchService, private resultsstore: ResultsStoreService, private favorite: ApiService) { }
+
+  ngOnInit() {
+  }
   
 }
+  

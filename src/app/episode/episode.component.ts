@@ -15,7 +15,8 @@ import { ApiService } from '../api.service';
 
 export class EpisodeComponent implements OnInit {
  @Input() result;
-
+ 
+  show: boolean = false;
   results: [];
   pods: Object;
 
@@ -44,6 +45,10 @@ export class EpisodeComponent implements OnInit {
       {
         console.log(value);
       })
+  }
+
+  toggle() {
+    this.show ? !this.show : this.show;
   }
   
 }

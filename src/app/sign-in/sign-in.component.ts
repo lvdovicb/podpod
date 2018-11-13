@@ -10,7 +10,7 @@ import { ApiService } from '../api.service';
   styleUrls: ['./sign-in.component.sass']
 })
 export class SignInComponent implements OnInit {
-
+  show:boolean = true;
   constructor(private api: ApiService) { }
 
   ngOnInit() {
@@ -27,5 +27,8 @@ export class SignInComponent implements OnInit {
           );
       } 
     )
+  }
+  toggle() {
+    this.show ? !this.show : this.show;
   }
 }

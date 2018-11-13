@@ -1,3 +1,4 @@
+import { PodcastComponent } from './../podcast/podcast.component';
 import { PlayerComponent } from './../player/player.component';
 import { EpisodeListComponent } from './../episode-list/episode-list.component';
 import { EpisodeComponent } from './../episode/episode.component';
@@ -12,6 +13,7 @@ const appRoutes: Routes = [
   { path: '',   redirectTo: 'appComponent', pathMatch: 'full' },
   { path: 'episode', component: EpisodeComponent },
   { path: 'episodeList', component: EpisodeListComponent },
+  { path: 'podcast', component: PodcastComponent },
   { path: 'sign-in', component: SignInComponent },
   { path: 'sign-up', component: SignUpComponent }
 

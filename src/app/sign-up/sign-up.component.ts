@@ -8,7 +8,8 @@ import { ApiService } from '../api.service';
   styleUrls: ['./sign-up.component.sass']
 })
 export class SignUpComponent implements OnInit {
-  
+  show:boolean = true;
+
   constructor(private api: ApiService) { }
 
   ngOnInit() {
@@ -19,5 +20,9 @@ export class SignUpComponent implements OnInit {
         console.log(bibi);
       }
     )
+  }
+
+  toggle() {
+    this.show ? !this.show : this.show;
   }
 }

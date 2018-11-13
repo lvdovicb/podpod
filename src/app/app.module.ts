@@ -17,6 +17,7 @@ import { FooterComponent } from './footer/footer.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { PlayerComponent } from './player/player.component';
+import { FavoritesComponent } from './favorites/favorites.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { PlayerComponent } from './player/player.component';
     FooterComponent,
     SignInComponent,
     SignUpComponent,
-    PlayerComponent
+    PlayerComponent,
+    FavoritesComponent
   ],
   imports: [
     BrowserModule,

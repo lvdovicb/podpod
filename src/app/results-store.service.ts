@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class ResultsStoreService {
   results: [];
   episode: Object;
+  next_offset: number;
   
   constructor() { }
 }

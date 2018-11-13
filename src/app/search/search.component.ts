@@ -24,6 +24,7 @@ export class SearchComponent implements OnInit {
 
   ngOnInit() {
   }
+  
   getPods(query){
      this.search.getPods(query).subscribe(search => 
     {this.pods = search
