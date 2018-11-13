@@ -17,7 +17,7 @@ export class ApiService {
   /*
     httpBase this one is for local test :
   */
-  httpBase = `http://localhost:3000/api/listeners`;
+  httpBase = `http://51.75.204.226:80/api/listeners`;
 
 
   private getToken() {
