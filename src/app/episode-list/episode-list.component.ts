@@ -11,23 +11,23 @@ import { EventService } from '../event.service';
   styleUrls: ['./episode-list.component.sass']
 })
 export class EpisodeListComponent implements OnInit {
-  @Input() result;
+  @Input() result: [];
 
-  episodes =  [];
+  episodes = [];
   next_offset: number;
 
-  constructor(private resultsstore: ResultsStoreService, private eventservice: EventService) { }
+  constructor(private resultsStore: ResultsStoreService, private eventservice: EventService) { }
 
   ngOnInit() {
     this.eventservice.event.subscribe(value => {
-      this.episodes = this.resultsstore.results
-      console.log(this.episodes);   
-      this.next_offset = this.resultsstore.next_offset
-      console.log(this.resultsstore.next_offset);
-    }) 
+      this.episodes = this.resultsStore.results
+      console.log(this.episodes);
+      this.next_offset = this.resultsStore.next_offset
+      console.log(this.resultsStore.next_offset);
+    })
   }
   list() {
-    this.episodes = this.resultsstore.results
+    this.episodes = this.resultsStore.results
     // console.log(this.episodes);
   }
 }

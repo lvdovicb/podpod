@@ -3,6 +3,7 @@ import { SearchService } from './search.service';
 
 import { Howler, Howl } from 'howler';
 import { Injectable } from '@angular/core';
+import * as Amplitude from 'amplitudejs'
 
 
 
@@ -13,10 +14,12 @@ export class PlayerService {
 
   constructor(private player: ResultsStoreService) { }
 
-  play(){
-    let podplaying = new Howl( {
-      src: ['result.audio']
+
+  initPlayer() {
+    let player = new Amplitude.init({
+      songs: [
+
+      ]
     });
-    podplaying.play();
   }
 }

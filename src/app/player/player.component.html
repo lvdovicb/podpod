@@ -1,5 +1,28 @@
-
-<audio src= {{ result.audio }}></audio>
-<button id='howler-play' >Play</button>
-<button id='howler-pause'>Pause</button>
-<button id='howler-stop'>Stop</button>
+<div class="container" id="player">
+    <div class="tile is-parent is-vertical has-background-light">
+        <!-- <img class="image is-64x64 media-left" src="{{ result.thumbnail }}" /> -->
+        <h4 class="tile is-parent"> {{ result.title_original }} </h4>
+        <a class="tile is-child podcast_title" [routerLink]="['/podcast/:podcast_title_original']"
+            routerLinkActive="router-link-active">
+            {{ result.podcast_title_original }} </a>
+        <p class="duration"> {{ result.audio_length }} </p>
+        <div id="player">
+            <audio controls="controls" src="{{ result.audio }}"></audio>
+        </div>
+        <span class="icon is-small" (click)="makeFavs(result)">
+            <i class="fa fa-heart"></i>
+        </span>
+        <!-- <span class="tag is-info" (click)="makeFavs(result)">Like Me</span> -->
+    </div>
+    <!-- <div id="headerPlayer">
+        <div id="amplitude-play-pause" class="amplitude-paused" amplitude-main-play-pause="true"></div>
+        <div id="infoSong">
+            <span id="title" amplitude-song-info="name" amplitude-main-song-info="true">Titre de la chanson</span>
+            <br>
+            <span id="artist" amplitude-song-info="artist" amplitude-main-song-info="true">Artiste</span>
+        </div>
+        <div id="infoAlbum">
+            <img id="album" amplitude-song-info="cover_art_url" amplitude-main-song-info="true" alt="album">
+        </div>
+    </div> -->
+</div>

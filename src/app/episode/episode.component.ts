@@ -6,6 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Observable } from "rxjs";
 import { Injectable } from '@angular/core';
 import { ApiService } from '../api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-episode',
@@ -14,8 +15,8 @@ import { ApiService } from '../api.service';
 })
 
 export class EpisodeComponent implements OnInit {
- @Input() result;
- 
+  @Input() result;
+
   show: boolean = false;
   results: [];
   pods: Object;
@@ -29,26 +30,27 @@ export class EpisodeComponent implements OnInit {
   releaseDate: Date;
   genres: [];
 
-  constructor(private search:SearchService, private resultsstore: ResultsStoreService, private favorite: ApiService) { }
+  constructor(private search: SearchService, private resultsstore: ResultsStoreService, private favorite: ApiService, private router: Router) { }
 
   ngOnInit() {
-     console.log(this.result);
+    console.table(this.result);
   }
-  makeFavs(favorite){
+  makeFavs(favorite) {
     let listener = JSON.parse(localStorage.getItem("listener"))
     let fav = {
-        id_episode: favorite.id,
-        podcast_title_original: favorite.podcast_title_original,
-        listenerId: listener.userId
-      } 
-    this.favorite.makeFavs(listener["userId"], listener["id"], fav).subscribe(value =>
-      {
-        console.log(value);
-      })
+      id_episode: favorite.id,
+      podcast_title_original: favorite.podcast_title_original,
+      listenerId: listener.userId
+    }
+    this.favorite.makeFavs(listener["userId"], listener["id"], fav).subscribe(value => {
+      console.log(value);
+    })
   }
 
   toggle() {
     this.show ? !this.show : this.show;
   }
-  
+  goToPodcast() {
+    this.router.navigate(["podcast", this.podcast_title_original])
+  }
 }

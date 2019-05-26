@@ -1,60 +1,62 @@
-section 
-  display: grid
-  grid-template-columns: 1fr 2fr
-  grid-template-rows: 3fr
-  grid-template-areas: "img episode_title" "podcast_title duration" "like_me player"
-  grid-column-gap: 1rem
-  grid-row-gap: 0.4rem
-  justify-items: center
-  align-items: center
-  width: 60vw
-  height: 15rem
-  border: 7px solid black
-  font-family: 'Brandon Grotesque Light'
-  object-fit: contain
-  background-color: #D1B971
+// section 
+//   display: grid
+//   grid-template-columns: 1fr 2fr
+//   grid-template-rows: 3fr
+//   grid-template-areas: "img episode_title" "podcast_title duration" "like_me player"
+//   grid-column-gap: 1rem
+//   grid-row-gap: 0.4rem
+//   grid-auto-rows: auto
+//   justify-items: center
+//   align-items: center
+//   width: 60vw
+//   height: 15rem
+//   border: 7px solid black
+//   font-family: 'Brandon Grotesque Light'
+//   object-fit: contain
+//   background-color: #94a0ab
 
-img
-  grid-area: img
-  width: 90px
-  height: 90px
-  margin: 0
-  border: 5px solid black
+// img
+//   grid-area: img
+//   width: 90px
+//   height: 90px
+//   margin: 0
+//   border: 5px solid black
 
-h4
-  grid-area: episode_title
-  width: 95%
-  font-size: 1.4rem
-  text-align: center
-  margin: 0.3rem
-  word-break: break-word
+// h4
+//   grid-area: episode_title
+//   width: 95%
+//   font-size: 1.4rem
+//   text-align: center
+//   margin: 0.3rem
+//   word-break: break-word
 
-p 
-  font-size: 1.4rem
-  font-family: 'Brandon Grotesque Light'
-  margin: 0.2rem
-  font-weight: 600
-  word-break: break-word
+// p 
+//   font-size: 1rem
+//   font-family: 'Brandon Grotesque Light'
+//   margin: 0.2rem
+//   font-weight: 600
+//   word-break: break-word
 
-button 
-  grid-area: like_me
-  justify-self: center
-  width: 5.5rem
-  height: 2.5rem
-  background-color:  #C53C21
-  color: black
-  border: 5px solid black
-  cursor: pointer
-  font-family: Brandon Grotesque Light, Helvetica, sans-serif
-  font-weight: 600
-  font-size: 1.2rem
+// button 
+//   grid-area: like_me
+//   justify-self: center
+//   width: 5.5rem
+//   height: 2.5rem
+//   background-color:  #C53C21
+//   color: black
+//   border: 5px solid black
+//   cursor: pointer
+//   font-family: Brandon Grotesque Light, Helvetica, sans-serif
+//   font-weight: 600
+//   font-size: 1.2rem
 
-.podcast_title
-  grid-area: podcast_title
-  text-decoration: underline
-  font-size: 0.9rem
-  font-style: italic
-  overflow: hidden
-  width: 95%
-  text-align: center
+// .podcast_title
+//   grid-area: podcast_title
+//   text-decoration: underline
+//   font-size: 1.1rem
+//   font-style: italic
+//   overflow: hidden
+//   text-overflow: ellipsis
+//   width: 95%
+//   text-align: center
   

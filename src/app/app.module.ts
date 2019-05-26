@@ -4,9 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing/app-routing.module';
-import { Form, FormsModule} from '@angular/forms';
-
-
+import { Form, FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { PodcastComponent } from './podcast/podcast.component';
 import { EpisodeComponent } from './episode/episode.component';
@@ -18,6 +16,10 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { PlayerComponent } from './player/player.component';
 import { FavoritesComponent } from './favorites/favorites.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+library.add(fas);
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import { FavoritesComponent } from './favorites/favorites.component';
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule
   ],
   providers: [SearchService],
   bootstrap: [AppComponent]
