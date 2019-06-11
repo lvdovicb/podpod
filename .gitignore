@@ -11,6 +11,7 @@
 ./client/node_modules
 /client/node_modules
 client/node_modules
+podpod/client/node_modules
 
 # IDEs and editors
 /.idea
