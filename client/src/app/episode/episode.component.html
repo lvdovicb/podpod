@@ -1,0 +1,51 @@
+<!-- <section class="columns has-background-light">
+  <div class="">
+    <div class="columns">
+      <img class="column image is-64x64 media-left" src="{{ result.thumbnail }}" />
+      <div class="column is-half">
+        <h2> {{ result.title_original }} </h2>
+        <p class="duration"> {{ result.audio_length }} </p>
+      </div>
+    </div>
+
+    <div class="">
+
+      <a class="podcast_title" [routerLink]="['/podcast/:podcast_title_original']"
+        routerLinkActive="router-link-active">
+        {{ result.podcast_title_original }} </a>
+
+    </div>
+    <div class="" id="player">
+      <audio controls="controls" src="{{ result.audio }}"></audio>
+    </div>
+    <span class="icon is-small is-danger" (click)="makeFavs(result)">
+      <fa-icon icon="heart"></fa-icon>
+    </span>
+
+  </div>
+</section> -->
+<section class="container">
+  <div class="tile is-ancestor">
+    <div class="tile">
+      <div class="tile is-vertical">
+        <div class="tile is-parent">
+          <article class="tile is-child notification is-primary">
+            <img class="column image is-128x128 media-left" src="{{ result.thumbnail }}" />
+            <p class="title">
+              <a class="podcast_title" [routerLink]="['/podcast/:podcast_title_original']"
+                routerLinkActive="router-link-active">
+                {{ result.podcast_title_original }} </a>
+            </p>
+            <p class="subtitle">{{ result.title_original }} </p>
+            <div class="" id="player">
+              <audio controls="controls" src="{{ result.audio }}"></audio>
+            </div>
+            <span class="icon is-small is-danger" (click)="makeFavs(result)">
+              <fa-icon icon="heart"></fa-icon>
+            </span>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
