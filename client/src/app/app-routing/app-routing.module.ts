@@ -13,7 +13,7 @@ const appRoutes: Routes = [
   { path: '', redirectTo: 'appComponent', pathMatch: 'full' },
   { path: 'episode', component: EpisodeComponent },
   { path: 'episodeList', component: EpisodeListComponent },
-  { path: 'podcast/::podcast_title_original', component: PodcastComponent },
+  { path: 'podcast', component: PodcastComponent },
   { path: 'sign-in', component: SignInComponent },
   { path: 'sign-up', component: SignUpComponent }
 

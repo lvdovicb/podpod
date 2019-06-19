@@ -8,21 +8,18 @@ import { ApiService } from '../api.service';
   styleUrls: ['./sign-up.component.sass']
 })
 export class SignUpComponent implements OnInit {
-  show:boolean = true;
+  show: boolean = true;
 
   constructor(private api: ApiService) { }
 
   ngOnInit() {
-  }
-  signUp(form){
-    this.api.newListener(form.value).subscribe(bibi =>
-      {
-        console.log(bibi);
-      }
-    )
-  }
 
-  toggle() {
-    this.show ? !this.show : this.show;
+
+  }
+  signUp(form) {
+    this.api.newListener(form.value).subscribe(bibi => {
+      console.log(bibi);
+    }
+    )
   }
 }

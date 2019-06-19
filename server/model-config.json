@@ -36,11 +36,11 @@
     "public": false
   },
   "listener": {
-    "dataSource": "MysqlDb",
+    "dataSource": "mydb",
     "public": true
   },
   "favorites": {
-    "dataSource": "MysqlDb",
+    "dataSource": "mydb",
     "public": true
   }
 }

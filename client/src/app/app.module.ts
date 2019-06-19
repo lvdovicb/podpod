@@ -1,7 +1,7 @@
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SearchService } from './search.service';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { Form, FormsModule } from '@angular/forms';
@@ -35,12 +35,14 @@ library.add(fas);
     PlayerComponent,
     FavoritesComponent
   ],
+
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    FontAwesomeModule,
     AppRoutingModule,
-    FontAwesomeModule
+    RouterModule,
   ],
   providers: [SearchService],
   bootstrap: [AppComponent]

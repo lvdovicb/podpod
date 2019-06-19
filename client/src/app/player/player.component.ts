@@ -46,16 +46,12 @@ export class PlayerComponent implements OnInit {
       console.log(value);
     })
   }
-
-  toggle() {
-    this.show ? !this.show : this.show;
-  }
-  goToPodcast() {
-    this.router.navigate(["podcast", this.podcast_title_original])
-  }
-  playerInit() {
-    Amplitude.init({
-      "songs": []
-    })
-  }
+  // goToPodcast() {
+  //   this.router.navigate(["podcast", this.podcast_title_original])
+  // }
+  // playerInit() {
+  //   Amplitude.init({
+  //     "songs": []
+  //   })
+  // }
 }

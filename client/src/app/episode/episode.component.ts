@@ -16,6 +16,7 @@ import { Router } from '@angular/router';
 
 export class EpisodeComponent implements OnInit {
   @Input() result;
+  @Input() podcasts;
 
   show: boolean = false;
   results: [];
@@ -33,7 +34,7 @@ export class EpisodeComponent implements OnInit {
   constructor(private search: SearchService, private resultsstore: ResultsStoreService, private favorite: ApiService, private router: Router) { }
 
   ngOnInit() {
-    console.table(this.result);
+    console.log(this.result);
   }
   makeFavs(favorite) {
     let listener = JSON.parse(localStorage.getItem("listener"))
@@ -47,9 +48,6 @@ export class EpisodeComponent implements OnInit {
     })
   }
 
-  toggle() {
-    this.show ? !this.show : this.show;
-  }
   goToPodcast() {
     this.router.navigate(["podcast", this.podcast_title_original])
   }
