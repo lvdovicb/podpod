@@ -1,10 +1,8 @@
-import { RouterModule, Routes, Router } from '@angular/router';
+
 import { SearchService } from './search.service';
-import { PlayerService } from "./player.service";
-import { EpisodeComponent } from './episode/episode.component';
-import { PodcastComponent } from './podcast/podcast.component';
+import { ApiService } from './api.service';
 import { Component, Input } from '@angular/core';
-import { AppRoutingModule } from './app-routing/app-routing.module';
+
 
 
 
@@ -15,11 +13,15 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 })
 export class AppComponent {
   @Input() bestPodcasts: [];
-  show: boolean = true;
+  show: boolean;
   title = 'PodPod';
+  listener;
 
-  constructor(private search: SearchService) { }
+  constructor(private search: SearchService, private api: ApiService) { }
   ngOnInit() {
-    this.search.getBestPodcasts()
   }
+  logout() {
+    this.api.logout()
+  }
+
 }

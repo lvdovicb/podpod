@@ -1,3 +1,5 @@
-<section class="columns is-multiline">
-  <app-episode class="column is-3" *ngFor="let episode of episodes" [result]="episode"></app-episode>
-  <app-footer *ngIf="episodes != 0" class="container"></app-footer>
+<section class="columns is-multiline has-background-light">
+  <app-episode class="column is-4" *ngFor="let episode of episodes" [result]="episode">
+  </app-episode>
+</section>
+<app-footer *ngIf="episodes && episodes.length" class="container"></app-footer>

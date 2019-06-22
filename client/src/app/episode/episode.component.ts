@@ -1,10 +1,6 @@
-import { PlayerService } from './../player.service';
-import { PlayerComponent } from './../player/player.component';
 import { SearchService } from './../search.service';
 import { ResultsStoreService } from './../results-store.service';
 import { Component, OnInit, Input } from '@angular/core';
-import { Observable } from "rxjs";
-import { Injectable } from '@angular/core';
 import { ApiService } from '../api.service';
 import { Router } from '@angular/router';
 
@@ -34,7 +30,7 @@ export class EpisodeComponent implements OnInit {
   constructor(private search: SearchService, private resultsstore: ResultsStoreService, private favorite: ApiService, private router: Router) { }
 
   ngOnInit() {
-    console.log(this.result);
+    // console.log('this.result', this.result);
   }
   makeFavs(favorite) {
     let listener = JSON.parse(localStorage.getItem("listener"))

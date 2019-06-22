@@ -3,10 +3,10 @@
     <div class="tile">
       <div class="tile is-vertical">
         <div class="tile is-parent">
-          <article class="tile is-child notification  has-text-weight-bold has-text-black-bis">
+          <article class="tile is-child has-background-white has-text-weight-bold has-text-black-bis">
             <img class="column image is-128x128 media-left" src="{{ result.thumbnail }}" />
-            <span class="icon is-small is-danger" (click)="makeFavs(result)">
-              <fa-icon icon="heart"></fa-icon>
+            <span class="icon is-large is-danger is-64x64 media-right" (click)="makeFavs(result)">
+              <fa-icon class="fas fa-2x is-danger" icon="heart"></fa-icon>
             </span>
             <p class="is-size-5">
               <a class="podcast_title" [routerLink]="['/podcast/:podcast_title_original']"
@@ -24,7 +24,7 @@
     </div>
   </div>
 </section>
-<section class="container">
+<!-- <section class="container">
   <div class="tile is-ancestor">
     <div class="tile">
       <div class="tile is-vertical">
@@ -49,4 +49,4 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->

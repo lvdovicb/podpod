@@ -1,9 +1,11 @@
 <form>
-  <input type="search" placeholder="Search" name="search" id="search" (keyup.enter)="getPods($event.target.value)">
+  <input type="search" placeholder="Search" name="search" id="search" [(ngModel)]="term"
+    (keyup.enter)="getPods($event.target.value)">
   <button>
     <fa-icon class="searchIcon" icon="search" size="2x" [spin]="isSyncAnimated"
       (click)="isSyncAnimated =! isSyncAnimated"></fa-icon>
   </button>
-  <input type="search" placeholder="Search Podcasts" name="search" id="search" (keyup.enter)="getPodcasts($event.target.value)">
+  <!-- <input type="search" placeholder="Search Podcasts" name="searchPodcasts" id="searchPodcasts"
+    (keyup.enter)="getPodcasts($event.target.value)"> -->
 
 </form>

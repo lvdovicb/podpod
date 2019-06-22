@@ -1,7 +1,13 @@
 <fieldset class="container">
     <form id="sign_up" #formSignIn="ngForm" (ngSubmit)="signUp(formSignIn)">
+        <label class="is-size-5" for="name">Name</label>
+
         <input placeholder="Name" type="text" name="name" id="name" ngModel>
+        <label class="is-size-5" for="email">Email</label>
+
         <input placeholder="Email" type="email" name="email" ngModel>
+        <label class="is-size-5" for="password">Password</label>
+
         <input placeholder="Password" type="password" ngModel name="password" id="psswrd">
         <button type="submit">Sign Up</button>
     </form>

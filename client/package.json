@@ -27,6 +27,7 @@
     "amplitudejs": "^3.3.1",
     "bulma": "^0.7.5",
     "core-js": "^2.6.7",
+    "ngx-pagination": "^4.0.0",
     "rxjs": "^6.5.2",
     "zone.js": "^0.8.29"
   },

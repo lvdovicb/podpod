@@ -11,10 +11,11 @@ import { EventService } from '../event.service';
 })
 
 export class SearchComponent implements OnInit {
-  pods: Object;
-  podcasts: Object[];
-  bestPodcasts: Object[];
-
+  response: Object;
+  term: string;
+  podcasts: Object;
+  bestPodcasts: Object;
+  next_offser: Number;
   constructor(private search: SearchService, private resultsStore: ResultsStoreService, private eventservice: EventService) { }
 
   ngOnInit() {
@@ -22,14 +23,14 @@ export class SearchComponent implements OnInit {
   // general search
   getPods(query: String) {
     this.search.getPods(query).subscribe(search => {
-      this.pods = search
-      this.resultsStore.results = this.pods["results"];
+      this.response = search
+      this.resultsStore.results = this.response["results"];
+      this.eventservice.event.emit();
     })
-    this.eventservice.event.emit();
   }
   // podcasts search
   getPodcats(query: String) {
     this.search.getPodcasts(query)
-    this.podcasts = this.resultsStore.podcasts
+    this.resultsStore.podcasts = this.search.podcasts
   }
 }

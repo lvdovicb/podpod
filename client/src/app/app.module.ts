@@ -15,10 +15,11 @@ import { FooterComponent } from './footer/footer.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { PlayerComponent } from './player/player.component';
-import { FavoritesComponent } from './favorites/favorites.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
+import { UserComponent } from './user/user.component';
+import { ApiService } from './api.service';
 library.add(fas);
 
 @NgModule({
@@ -33,7 +34,7 @@ library.add(fas);
     SignInComponent,
     SignUpComponent,
     PlayerComponent,
-    FavoritesComponent
+    UserComponent
   ],
 
   imports: [
@@ -44,7 +45,7 @@ library.add(fas);
     AppRoutingModule,
     RouterModule,
   ],
-  providers: [SearchService],
+  providers: [SearchService, ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

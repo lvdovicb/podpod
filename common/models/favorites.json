@@ -6,6 +6,11 @@
     "validateUpsert": true
   },
   "properties": {
+    "id": {
+      "type": "number",
+      "generated": true,
+      "id": true
+    },
     "id_episode": {
       "type": "string",
       "required": true
@@ -17,7 +22,7 @@
   },
   "validations": [],
   "relations": {
-    "listeners": {
+    "listener": {
       "type": "hasOne",
       "model": "listener",
       "foreignKey": "listenerId",
@@ -81,7 +86,6 @@
       "permission": "ALLOW",
       "property": "create"
     },
-    
     {
       "accessType": "*",
       "principalType": "ROLE",

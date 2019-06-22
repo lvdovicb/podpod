@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, Validators } from '@angular/forms';
 import { ApiService } from '../api.service';
-
-
 
 @Component({
   selector: 'app-sign-in',
@@ -10,22 +7,23 @@ import { ApiService } from '../api.service';
   styleUrls: ['./sign-in.component.sass']
 })
 export class SignInComponent implements OnInit {
-  show: boolean = true;
+
   constructor(private api: ApiService) { }
+
+  favorites: Object[];
 
   ngOnInit() {
   }
-  signIn(form) {
-    console.log(form);
-    this.api.login(form.value).subscribe(value => {
-      console.log(value);
-      localStorage.setItem("listener", JSON.stringify(value))
-      this.api.getFavs(value["userId"], value["id"]).subscribe(favorite => {
-        console.log(favorite);
-      }
-      );
-    }
-    )
-  }
 
+  signIn(form) {
+    this.api.login(form.value).subscribe(value => {
+      localStorage.setItem("listener", JSON.stringify(value))
+      localStorage.setItem("userId", JSON.stringify(value["userId"]))
+      console.log("TCL: SignInComponent -> signIn -> value['userId']", value["userId"])
+      this.api.getFavorites(value["userId"], value["id"]).subscribe(favorites => {
+        this.favorites = favorites
+        console.log("TCL: SignInComponent -> signIn -> this.favorites", this.favorites)
+      });
+    })
+  }
 }

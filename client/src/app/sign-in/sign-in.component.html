@@ -1,7 +1,10 @@
 <fieldset class="container">
-  <form id="sign_in" #formSignIn="ngForm" (ngSubmit)="signIn(formSignIn)">
+  <form class="control has-icons-left" id="sign_in" #formSignIn="ngForm" (ngSubmit)="signIn(formSignIn)">
+    <label class="is-size-5" for="email">Email</label>
     <input placeholder="Email" type="email" name="email" ngModel>
-    <input placeholder="Password" type="password" ngModel name="password" id="password">
+    <!-- <fa-icon class="icon is-left is-small" icon="envelope"></fa-icon> -->
+    <label class="is-size-5" for="password">Password</label>
+    <input label="Password" placeholder="Password" type="password" ngModel name="password" id="password">
     <button type="submit">Sign In</button>
   </form>
 </fieldset>

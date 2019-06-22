@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { tap } from 'rxjs/operators';
-
+import { SignInComponent } from '../app/sign-in/sign-in.component'
 
 
 @Injectable({
@@ -9,7 +8,9 @@ import { tap } from 'rxjs/operators';
 })
 export class ApiService {
   token: string;
-  responsLoginData: string;
+  responseLoginData: string;
+  favorites: any;
+  userId: number;
   /*
     httpBase is for external server
   */
@@ -17,13 +18,15 @@ export class ApiService {
   /*
     httpBase this one is for local test :
   */
-  httpBase = `http://localhost:3307/api/listeners`;
+  httpBase = `http://localhost:3308/api/listeners`;
 
 
   private getToken() {
     this.token = JSON.parse(localStorage.getItem('token'));
   }
-
+  getUserId() {
+    this.userId = JSON.parse(localStorage.getItem('userId'))
+  }
   constructor(private http: HttpClient) { }
 
   newListener(listener) {
@@ -31,21 +34,24 @@ export class ApiService {
 
   }
   login(listener) {
-    return this.http.post(`${this.httpBase}/login`, listener);
+    return this.http.post(`${this.httpBase}/login`, listener)
   }
 
   logout() {
+    // mettre token dans un header
+    // return this.http.post(`${this.httpBase}/logout?access_token=${this.token}`, this.responseLoginData).pipe(
+    //   tap(value => {
     this.getToken();
-    // mettre token en header
-    return this.http.post(`${this.httpBase}/logout?access_token=${this.token}`, this.responsLoginData).pipe(
-      tap(value => {
-        localStorage.removeItem('token');
-        this.token = null;
-      })
-    )
+    localStorage.clear();
+    console.log("localStorage.cleared")
+    // })
   }
-  getFavs(id, token) {
-    return this.http.get(`${this.httpBase}/${id}/favorites/?access_token=${token}`)
+  getFavorites(userId, token) {
+    this.favorites = this.http.get(`${this.httpBase}/${userId}/favorites/?access_token=${token}`)
+    return this.favorites
+  }
+  getFavsFromApi(episodeId) {
+    return this.http.get(`https://listen-api.listennotes.com/api/v2/episodes/${episodeId}`)
   }
 
   makeFavs(id, token, favorite) {

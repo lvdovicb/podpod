@@ -7,8 +7,8 @@ export class ResultsStoreService {
   results: [];
   episode: Object;
   next_offset: number;
-  podcasts: Object[];
-  bestPodcasts: Object[];
+  podcasts: Object;
+  bestPodcasts: Object;
 
   constructor() { }
 }
